@@ -17,7 +17,7 @@ const Post = async () => {
   return (
     <>
     {buzz.map((buzz) => (
-    <div key={buzz.id} className='w-full bg-[#161616] px-5 py-4 rounded-md h-32 my-3'>
+    <div key={buzz.id} className='w-full bg-[#161616] px-5 py-4 rounded-md  my-3'>
       <p>{buzz.title}</p>
     </div>
     ))}

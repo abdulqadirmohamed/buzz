@@ -12,7 +12,7 @@ export async function POST(request){
 
 export async function GET(){
     await connectMongoDB()
-    const buzz = await Buzz.find()
+    const buzz = await Buzz.find().sort({createdAt: -1})
 
     return NextResponse.json({buzz})
 }
