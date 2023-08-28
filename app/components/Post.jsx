@@ -17,7 +17,7 @@ const getStory = async () => {
 }
 
 const Post = async () => {
-  
+
   const { buzz } = await getStory()
 
   return (
@@ -25,10 +25,14 @@ const Post = async () => {
       {buzz.map((buzz) => (
         <div key={buzz.id} className='w-full bg-[#161616] px-5 py-4 rounded-md  my-3'>
           <div className='flex justify-between items-center py-2'>
-            <h5 className='text-sm'><Moment calendar>{buzz.createdAt}</Moment></h5>
             <div className='flex gap-4'>
-            <Link href={`/editBuzz/${buzz._id}`}>Edit</Link>
-            <RemoveBtn id={buzz._id}/>
+              <h5 className='text-sm'><Moment calendar>{buzz.createdAt}</Moment></h5>
+              <span> | </span>
+              <h5 className='text-sm'><Moment calendar>Updated - {buzz.updatedAt}</Moment></h5>
+            </div>
+            <div className='flex gap-4'>
+              <Link href={`/editBuzz/${buzz._id}`}>Edit</Link>
+              <RemoveBtn id={buzz._id} />
             </div>
           </div>
           <hr />
