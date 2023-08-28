@@ -5,7 +5,7 @@ import Post from './components/Post'
 
 export default function Home() {
   return (
-    <main className="bg-[#0F0F0F] h-screen">
+    <main className="bg-[#0F0F0F] h-screen pb-10">
       <Form/>
       <div className='w-1/2 mx-auto text-white mt-10'>
         <Post/>
