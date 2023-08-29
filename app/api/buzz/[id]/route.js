@@ -10,3 +10,9 @@ export async function PUT(request, {params}){
     return NextResponse.json({message: 'Buzz updates'}, {status: 200})
 }
 
+export async function GET(request, { params }) {
+    const { id } = params;
+    await connectMongoDB();
+    const buzz = await Buzz.findOne({ _id: id });
+    return NextResponse.json({ buzz }, { status: 200 });
+  }
