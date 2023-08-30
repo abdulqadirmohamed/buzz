@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 
 const Update = ({ title, id }) => {
   const [newTitle, setNewTitle] = useState(title);
+  
+  const apiURL = process.env.API_UR
 
   const router = useRouter()
 
@@ -13,7 +15,7 @@ const Update = ({ title, id }) => {
       alert("Title is required")
     }
     try{
-      const res = await fetch(`http://localhost:3000/api/buzz/${id}`,{
+      const res = await fetch(`${apiURL}/api/buzz/${id}`,{
         method: "PUT",
         headers: {
           "content-type": "application/json"
