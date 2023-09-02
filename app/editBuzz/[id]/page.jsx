@@ -1,4 +1,4 @@
-import Update from '@/app/components/Update'
+import Update from '@/components/Update'
 import React from 'react'
 
 
@@ -25,7 +25,7 @@ const page = async ({ params }) => {
 
 
   return (
-    <Update id={buzz._id} title={buzz.title} />
+    <Update id={buzz._id} title={buzz.title} createdAt={buzz.createdAt} />
   )
 }
 

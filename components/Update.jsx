@@ -15,7 +15,7 @@ const Update = ({ title, id }) => {
       alert("Title is required")
     }
     try{
-      const res = await fetch(`${apiURL}/api/buzz/${id}`,{
+      const res = await fetch(`http://localhost:3000/api/buzz/${id}`,{
         method: "PUT",
         headers: {
           "content-type": "application/json"
@@ -26,6 +26,7 @@ const Update = ({ title, id }) => {
         throw new Error("Failed to update topic");
       }
       router.push("/")
+      router.refresh();
     }catch(error){
       console.log("error")
     }
