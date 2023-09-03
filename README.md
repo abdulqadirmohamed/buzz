@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## A complete Grud project with Nextjs TailwindCSS and Mongodb
 
+![Alt text](/img/Buzz.png "Project Demo Image")
 First, run the development server:
 
 ```bash
