@@ -1,14 +1,17 @@
 "use client"
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import Moment from 'react-moment';
 import RemoveBtn from './RemoveBtn';
 import Link from 'next/link';
 import profile from '@/img/profile.jpg'
 import Image from 'next/image';
+import { ThemeContext } from '@/context/ThemeContext';
 
 const PostLists = ({ id, title, createdAt }) => {
+
+    const {theme, toggleTheme} = useContext(ThemeContext)
     return (
-        <div key={id} className='w-full bg-[#161616] px-5 py-4 rounded-md  my-3'>
+        <div key={id} className={`w-full ${theme === 'dark' ? 'dark' : ''} px-5 py-4 rounded-md  my-3 transition duration-900 ease `}>
             <div className='flex justify-between items-center py-2'>
                 <div className='flex items-center md:gap-4 gap-2'>
                     <div>

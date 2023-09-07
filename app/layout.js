@@ -2,6 +2,8 @@ import Header from '../components/Header'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { NextAuthProvider } from './providers'
+import ThemeContextProvider from '@/context/ThemeContext'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,12 +16,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ThemeContextProvider>
+
+    
         <NextAuthProvider>
         <Header />
         <div className="bg-[#0F0F0F] h-screen pb-10">
           {children}
         </div>
         </NextAuthProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   )

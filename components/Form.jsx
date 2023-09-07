@@ -43,7 +43,7 @@ const Form = () => {
         <button onClick={handleClick} className='bg-white px-4 py-2 rounded-md my-3'>Send</button>
       </form>
 
-      ): 'Please sign in'}
+      ): <span className='text-white'>Please sign in</span>}
     </div>
   )
 }

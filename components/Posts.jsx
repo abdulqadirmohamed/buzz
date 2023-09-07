@@ -1,6 +1,4 @@
-import React from 'react'
 import PostLists from './PostLists';
-
 
 const getStory = async () => {
   try {
@@ -14,13 +12,11 @@ const getStory = async () => {
 }
 
 const Post = async () => {
-
   const { buzz } = await getStory()
-
   return (
     <>
       {buzz.map((buzz) => (
-        <PostLists id={buzz._id} title={buzz.title} createdAt={buzz.createdAt}/>
+        <PostLists id={buzz._id} title={buzz.title} createdAt={buzz.createdAt} />
       ))}
     </>
   )
