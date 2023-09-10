@@ -3,24 +3,17 @@ import Link from 'next/link'
 import React, { useContext } from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Image from 'next/image'
-import { ThemeContext } from '@/context/ThemeContext'
+import ThemeButton from './ThemeButton'
 
 const Header = () => {
     const { status, data: session } = useSession()
 
-    const { toggleTheme, theme } = useContext(ThemeContext)
     return (
         <div className='bg-[#0F0F0F] text-white'>
             <div className="md:w-1/2 w-4/5 mx-auto py-10 flex justify-between items-center">
                 <Link href="/" className='hover:underline'>Buzz</Link>
                 <div className='flex items-center gap-4'>
                     <div>
-                        <button
-                            className={`p-2 rounded bg-${theme? 'light':'dark'}`}
-                            onClick={toggleTheme}
-                        >
-                            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-                        </button>
                     </div>
                     <div className='flex items-center gap-2'>
                         {session ? (

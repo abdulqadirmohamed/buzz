@@ -39,7 +39,7 @@ const Update = ({ title, id }) => {
            onChange={(e) => setNewTitle(e.target.value)}
            value={newTitle}
           className='w-full bg-[#161616] text-white px-4 py-2 rounded-md' placeholder="What's on your mind?" id="" cols="30" rows="4"></textarea>
-        <button  className='bg-white px-4 py-2 rounded-md my-3'>Update</button>
+        <button  className='bg-white dark:bg-slate-800 px-4 py-2 rounded-md my-3'>Update</button>
       </form>
     </div>
   )

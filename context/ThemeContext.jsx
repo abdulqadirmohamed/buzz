@@ -1,19 +1,7 @@
 "use client"
-import React, { useState, createContext } from 'react'
+import { ThemeProvider } from 'next-themes'
 
-export const ThemeContext = createContext()
 
-const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark')
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
+export default function Providers({ children }) {
+  return <ThemeProvider attribute='class'>{children}</ThemeProvider>
 }
-
-export default ThemeContextProvider 
